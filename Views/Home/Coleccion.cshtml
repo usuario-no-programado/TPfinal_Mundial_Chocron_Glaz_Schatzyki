@@ -4,14 +4,22 @@
 
 <h1> Tu coleccion </h1>
 
+<section>
 @foreach (Coleccion figu in ViewBag.Coleccion){
-<div>
-<p>hola</p>
-<p>@figu.figuritaID</p>
-<img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img>
-<p>@figu.cantidadFiguritasSueltas</p>
+<div class="figuritas">
+<p class="izquierda">@figu.cantidadFiguritasSueltas</p>
+<p>N:@figu.figuritaID</p>
+@* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
+<img src="/images/jugadores/messi.svg" alt="Messi" />
 <p>@figu.pegado</p>
+
+<div class="pegar">
+    <form asp-action="PegarFigurita" method="post">
+        <input type="hidden" name="figuritaID" value="@figu.figuritaID" />
+        <button type="submit">Pegar figurita</button>
+    </form>
+</div>
+
 </div>
 }
-
-<p>hola</p>
+</section>

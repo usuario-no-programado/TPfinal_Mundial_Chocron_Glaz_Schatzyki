@@ -33,6 +33,14 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult PegarFigurita(int figuritaID)
+    {
+        BD bd = new BD();
+        bd.pegarFigurita(figuritaID);
+        return RedirectToAction("Coleccion");
+    }
+
     public IActionResult Sobres()
     {
         return View();

@@ -1,31 +1,72 @@
-html {
-  font-size: 14px;
+*{
+  margin: 0%;
+  padding: 0%;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+section{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.figuritas{
+  width: 15%;
+  float: left;
+  border-radius: 10px;
+  background-color: yellow;
+  padding: 1%;
+  margin: 1%;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.figuritas p{
+  background-color: #258cfb;
+  border-radius: 10000px;
+  padding: 5%;
+  width: fit-content;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-body {
-  margin-bottom: 60px;
+.figuritas img{
+  width: 100%;
+  height: auto;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.pegar{
+  width: 100%;
+  float: none;
+  border-radius: 10px;
+  background-color: orange;
+  padding: 5%;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.izquierda{
+  float: right;
+}
+
+button{
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 13px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+button:hover {
+	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color:#415989;
+}
+button:active {
+	position:relative;
+	top:1px;
 }
