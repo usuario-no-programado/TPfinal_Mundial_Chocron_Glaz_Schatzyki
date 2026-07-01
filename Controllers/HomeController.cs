@@ -27,6 +27,9 @@ public class HomeController : Controller
 
     public IActionResult Coleccion()
     {
+        BD bd = new BD();
+        List<Coleccion> coleccion = bd.GetColeccion();
+        ViewBag.Coleccion = coleccion;
         return View();
     }
 

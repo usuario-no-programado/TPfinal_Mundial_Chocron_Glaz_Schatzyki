@@ -1,3 +1,17 @@
 @{
     ViewData["Title"] = "Inicio";
 }
+
+<h1> Tu coleccion </h1>
+
+@foreach (Coleccion figu in ViewBag.Coleccion){
+<div>
+<p>hola</p>
+<p>@figu.figuritaID</p>
+<img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img>
+<p>@figu.cantidadFiguritasSueltas</p>
+<p>@figu.pegado</p>
+</div>
+}
+
+<p>hola</p>

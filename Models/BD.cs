@@ -51,4 +51,15 @@ public class BD{
             return connection.Query<Figurita>(query).ToList();
         }
     }
+
+    public List<Coleccion> GetColeccion(){
+        List<Coleccion> coleccion = new List<Coleccion>();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT [usuario-figurita].figuritaID, [usuario-figurita].cantidadFiguritasSueltas, [usuario-figurita].pegado FROM [usuario-figurita] inner join figurita on figurita.ID = [usuario-figurita].figuritaID WHERE [usuario-figurita].usuarioID = 1 order by figurita.seleccionID";
+            coleccion = connection.Query<Coleccion>(query).ToList();
+        }
+
+        return coleccion;
+    }
 }
