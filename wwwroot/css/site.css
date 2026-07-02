@@ -3,29 +3,66 @@
   padding: 0%;
 }
 
+.todo{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 section{
   display: flex;
   justify-content: space-around;
-  
+  flex-wrap: wrap;
   width: 100%;
+  background-color: #cfcfcf;
+  border-radius: 30px;
+  padding: 1%;
+}
+
+div{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 4%;
 }
 
 .figuritas{
-  width: 15%;
+  width: 10%;
   float: left;
   border-radius: 10px;
   background-color: yellow;
-  padding: 1%;
+  padding: 0.5%;
   margin: 1%;
+  position: relative;
 }
 
 .figuritas p{
   background-color: #258cfb;
   border-radius: 10000px;
   padding: 5%;
+  margin-bottom: 0;
   width: fit-content;
   text-align: center;
-  margin-bottom: 0;
+  position: absolute;
+}
+
+.ubicacion1{
+top: -1%;
+left: -1%;
+}
+
+.ubicacion2{
+top: -1%;
+left: 75%;
+}
+
+.ubicacion3{
+left: -1%;
+bottom: 20%;
 }
 
 .figuritas img{
@@ -42,10 +79,6 @@ section{
   margin: 1%;
   display: flex;
   justify-content: center;
-}
-
-.izquierda{
-  float: right;
 }
 
 button{
@@ -70,4 +103,9 @@ button:hover {
 button:active {
 	position:relative;
 	top:1px;
+}
+
+.botonGrande{
+  width: 100%;
+  font-size: 250%;
 }

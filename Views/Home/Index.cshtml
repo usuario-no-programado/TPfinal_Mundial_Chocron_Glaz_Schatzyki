@@ -2,17 +2,19 @@
     ViewData["Title"] = "Inicio";
 }
 
-<h1>¡¡BIENVENIDOS AL ...</h1>
-<h2>album de Figuritas del mundial 2026!!</h2>
 
+<h1>¡¡BIENVENIDOS AL ...<br>album de Figuritas del mundial 2026!!</h1>
+
+<section> 
 <form asp-action="Sobres" method="post">
-    <button type="submit">Abrir Paquete</button>
+    <button class="botonGrande" type="submit">Abrir Paquete</button>
 </form>
 
 <form asp-action="Coleccion" method="post">
-    <button type="submit">Ver Repetidas y Faltantes</button>
+    <button class="botonGrande" type="submit">Ver Repetidas y Faltantes</button>
 </form>
 
 <form asp-action="Album" method="post">
-    <button type="submit">Ver Album</button>
+    <button class="botonGrande" type="submit">Ver Album</button>
 </form>
+</section>
