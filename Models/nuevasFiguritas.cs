@@ -1,4 +1,6 @@
-public class nuevasFigurita
+namespace TPfinal_Mundial_Chocron_Glaz_Schatzyki.Models;
+
+public class NuevasFigurita
 {
-    int id{get; set;}
+    public int Id { get; set; }
 }

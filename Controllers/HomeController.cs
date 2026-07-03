@@ -44,7 +44,7 @@ public class HomeController : Controller
     public IActionResult Sobres()
     {
         BD bd = new BD();
-        List<Coleccion> recibidas = bd.abrirSobre();
+        List<Figurita> recibidas = bd.abrirSobre();
         ViewBag.recibidas = recibidas;
         return View();
     }

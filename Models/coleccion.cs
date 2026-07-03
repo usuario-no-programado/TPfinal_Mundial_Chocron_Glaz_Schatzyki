@@ -1,6 +1,8 @@
+namespace TPfinal_Mundial_Chocron_Glaz_Schatzyki.Models;
+
 public class Coleccion
 {
-    public int figuritaID { get; set; }
-    public int cantidadFiguritasSueltas { get; set; }
-    public bool pegado { get; set; }
+    public int FiguritaID { get; set; }
+    public int CantidadFiguritasSueltas { get; set; }
+    public bool Pegado { get; set; }
 }

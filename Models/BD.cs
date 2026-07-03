@@ -1,7 +1,9 @@
 using Dapper;
 using Microsoft.Data.SqlClient;
 
-public class BD{
+namespace TPfinal_Mundial_Chocron_Glaz_Schatzyki.Models;
+
+public class BD {
     private string _connectionString = @"Server=localhost;DataBase=Album;Integrated Security=True;TrustServerCertificate=True;";
     string query;
 
@@ -56,7 +58,7 @@ public class BD{
         List<Coleccion> coleccion = new List<Coleccion>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT [usuario-figurita].figuritaID, [usuario-figurita].cantidadFiguritasSueltas, [usuario-figurita].pegado FROM [usuario-figurita] inner join figurita on figurita.ID = [usuario-figurita].figuritaID WHERE [usuario-figurita].usuarioID = 1 order by figurita.seleccionID";
+            string query = "SELECT [usuario-figurita].figuritaID AS FiguritaID, [usuario-figurita].cantidadFiguritasSueltas AS CantidadFiguritasSueltas, [usuario-figurita].pegado AS Pegado FROM [usuario-figurita] inner join figurita on figurita.ID = [usuario-figurita].figuritaID WHERE [usuario-figurita].usuarioID = 1 order by figurita.seleccionID";
             coleccion = connection.Query<Coleccion>(query).ToList();
         }
 

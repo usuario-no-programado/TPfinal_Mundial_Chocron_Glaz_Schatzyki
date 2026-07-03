@@ -7,15 +7,15 @@
 <section>
 @foreach (Coleccion figu in ViewBag.Coleccion){
 <div class="figuritas">
-<p class="ubicacion1">@figu.cantidadFiguritasSueltas</p>
-<p class="ubicacion2">N:@figu.figuritaID</p>
-@* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
+<p class="ubicacion1">@figu.CantidadFiguritasSueltas</p>
+<p class="ubicacion2">N:@figu.FiguritaID</p>
+@* <img src="@("/imagenes/jugadores/" + figu.FiguritaID + ".svg")"> </img> *@
 <img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
-<p class="ubicacion3">@figu.pegado</p>
+<p class="ubicacion3">@figu.Pegado</p>
 
 <div class="pegar">
     <form asp-action="PegarFigurita" method="post">
-        <input type="hidden" name="figuritaID" value="@figu.figuritaID" />
+        <input type="hidden" name="figuritaID" value="@figu.FiguritaID" />
         <button type="submit">Pegar figurita</button>
     </form>
 </div>

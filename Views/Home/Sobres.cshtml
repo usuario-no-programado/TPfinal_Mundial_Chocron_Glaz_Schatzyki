@@ -4,23 +4,18 @@
 
 <h1> Abrir paquete </h1>
 
-<section> 
-
+<section>
 <div>
-<img src="/images/jugadores/messi.svg" alt="Messi" /> @* hay que cambiarlo por un sobre *@
-
-<button class="botonGrande"onclick="mostrarContenido()">Abrir Sobre</button>
-
+    <img src="/images/jugadores/messi.svg" alt="Messi" /> @* hay que cambiarlo por un sobre *@
+    <button class="botonGrande" onclick="mostrarContenido()">Abrir Sobre</button>
+</div>
 </section>
 
 <section id="contenido" class="oculto">
-@foreach (Coleccion figu in ViewBag.recibidas){
-<div class="figuritas">
-<p class="ubicacion1">@figu.cantidadFiguritasSueltas</p>
-<p class="ubicacion2">N:@figu.figuritaID</p>
+@foreach (Figurita figu in ViewBag.recibidas){
+<div class="figuritas paquete">
 @* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
 <img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
-<p class="ubicacion3">@figu.pegado</p>
 </div>
 }
 </section>

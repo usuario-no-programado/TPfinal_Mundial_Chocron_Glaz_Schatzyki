@@ -1,15 +1,35 @@
-*{
-  margin: 0%;
-  padding: 0%;
+/* ============================================ */
+/* RESET GLOBAL */
+/* ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.todo{
+/* ============================================ */
+/* LAYOUT GENERAL */
+/* ============================================ */
+.todo {
   width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-section{
+/* ============================================ */
+/* TIPOGRAFÍA */
+/* ============================================ */
+h1 {
+  text-align: center;
+  margin-bottom: 4%;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* ============================================ */
+/* SECCIONES */
+/* ============================================ */
+section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -17,20 +37,19 @@ section{
   background-color: #cfcfcf;
   border-radius: 30px;
   padding: 1%;
+  margin-bottom: 2rem;
 }
 
-div{
+section div {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-h1{
-  text-align: center;
-  margin-bottom: 4%;
-}
-
-.figuritas{
+/* ============================================ */
+/* FIGURITAS */
+/* ============================================ */
+.figuritas {
   width: 10%;
   float: left;
   border-radius: 10px;
@@ -40,37 +59,88 @@ h1{
   position: relative;
 }
 
-.figuritas p{
+.figuritas img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Numeración en figuritas */
+.figuritas p {
   background-color: #258cfb;
-  border-radius: 10000px;
+  border-radius: 50%;
   padding: 5%;
   margin-bottom: 0;
   width: fit-content;
   text-align: center;
   position: absolute;
+  color: white;
+  font-weight: bold;
 }
 
-.ubicacion1{
-top: -1%;
-left: -1%;
+.ubicacion1 {
+  top: -1%;
+  left: -1%;
 }
 
-.ubicacion2{
-top: -1%;
-left: 75%;
+.ubicacion2 {
+  top: -1%;
+  left: 75%;
 }
 
-.ubicacion3{
-left: -1%;
-bottom: 20%;
+.ubicacion3 {
+  left: -1%;
+  bottom: 20%;
 }
 
-.figuritas img{
+/* ============================================ */
+/* FIGURITAS EN PAQUETES */
+/* ============================================ */
+.paquete {
+  width: 15%;
+}
+
+/* ============================================ */
+/* BOTONES */
+/* ============================================ */
+button {
+  box-shadow: inset 0px 0px 15px 3px #23395e;
+  background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+  background-color: #2e466e;
+  border-radius: 17px;
+  border: 1px solid #1f2f47;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  padding: 6px 13px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+  background-color: #415989;
+  transform: scale(1.05);
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+.botonGrande {
   width: 100%;
-  height: auto;
+  font-size: 250%;
+  padding: 12px 26px;
 }
 
-.pegar{
+/* ============================================ */
+/* CONTENEDOR PEGAR FIGURITA */
+/* ============================================ */
+.pegar {
   width: 100%;
   float: none;
   border-radius: 10px;
@@ -81,35 +151,9 @@ bottom: 20%;
   justify-content: center;
 }
 
-button{
-	box-shadow:inset 0px 0px 15px 3px #23395e;
-	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
-	background-color:#2e466e;
-	border-radius:17px;
-	border:1px solid #1f2f47;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 13px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #263666;
-}
-button:hover {
-	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
-	background-color:#415989;
-}
-button:active {
-	position:relative;
-	top:1px;
-}
-
-.botonGrande{
-  width: 100%;
-  font-size: 250%;
-}
-
-.oculto{
+/* ============================================ */
+/* UTILIDADES */
+/* ============================================ */
+.oculto {
   display: none;
 }
