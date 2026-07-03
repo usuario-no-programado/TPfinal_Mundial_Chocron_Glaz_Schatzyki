@@ -7,15 +7,20 @@
 <section> 
 
 <div>
-<img src="/images/jugadores/messi.svg" alt="Messi" />
+<img src="/images/jugadores/messi.svg" alt="Messi" /> @* hay que cambiarlo por un sobre *@
 
-<form asp-action="abrirSobre" method="post">
-    <button class="botonGrande" type="submit">Abrir Sobre</button>
-</form>
+<button class="botonGrande"onclick="mostrarContenido()">Abrir Sobre</button>
 
 </section>
 
-<section> 
-
-
+<section id="contenido" class="oculto">
+@foreach (Coleccion figu in ViewBag.recibidas){
+<div class="figuritas">
+<p class="ubicacion1">@figu.cantidadFiguritasSueltas</p>
+<p class="ubicacion2">N:@figu.figuritaID</p>
+@* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
+<img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
+<p class="ubicacion3">@figu.pegado</p>
+</div>
+}
 </section>

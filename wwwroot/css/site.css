@@ -109,3 +109,7 @@ button:active {
   width: 100%;
   font-size: 250%;
 }
+
+.oculto{
+  display: none;
+}
