@@ -8,6 +8,7 @@ public class BD {
     string query;
 
     public void ingresarPaquete(List<Figurita> nuevas){
+
         foreach (Figurita id in nuevas){
             List<int> numeros = new List<int>();
             query = "SELECT figuritaID FROM [usuario-figurita]";
@@ -58,31 +59,22 @@ public class BD {
         List<Coleccion> coleccion = new List<Coleccion>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT [usuario-figurita].figuritaID AS FiguritaID, [usuario-figurita].cantidadFiguritasSueltas AS CantidadFiguritasSueltas, [usuario-figurita].pegado AS Pegado FROM [usuario-figurita] inner join figurita on figurita.ID = [usuario-figurita].figuritaID WHERE [usuario-figurita].usuarioID = 1 order by figurita.seleccionID";
+            string query = "SELECT [usuario-figurita].figuritaID, [usuario-figurita].cantidadFiguritasSueltas, [usuario-figurita].pegado FROM [usuario-figurita] inner join figurita on figurita.ID = [usuario-figurita].figuritaID WHERE [usuario-figurita].usuarioID = 1 AND [usuario-figurita].cantidadFiguritasSueltas > 0 order by figurita.ID";
             coleccion = connection.Query<Coleccion>(query).ToList();
         }
 
         return coleccion;
     }
 
-    public List<Figurita> abrirSobre(){  //hay que refactorizar
+    public List<Figurita> abrirSobre(){
         List<Figurita> figus = new List<Figurita>();
+        List<Figurita> todasFigus = obtenerTodasLasFiguritas();
         Random random = new Random();
         
         for (int i = 0; i < 5; i++)
         {
-            int idRandom = random.Next(1, 101);
-            query = "SELECT * FROM figurita WHERE ID = @ID";
-            
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                Figurita figurita = connection.QueryFirstOrDefault<Figurita>(query, new { ID = idRandom });
-                
-                if (figurita != null)
-                {
-                    figus.Add(figurita);
-                }
-            }
+            int idRandom = random.Next(0, todasFigus.Count + 1);
+            figus.Add(todasFigus[idRandom]);
         }
         
         return figus;

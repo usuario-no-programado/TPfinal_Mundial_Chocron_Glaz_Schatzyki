@@ -44,6 +44,13 @@ section div {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 20%;
+}
+
+section div img{
+  margin: 1%;
+  border-radius: 10px;
+  width: 100%;
 }
 
 /* ============================================ */
@@ -153,6 +160,26 @@ button:active {
   justify-content: center;
 }
 
+/* ============================================ */
+/* Album */
+/* ============================================ */
+.páginas{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  background-color: #cfcfcf;
+  border-radius: 30px;
+  padding: 1%;
+  margin-bottom: 2rem;
+}
+.páginas h3{
+  text-align: center;
+  margin: 1%;
+  font-size: 300%;
+  font-weight: bold;
+  width: 100%;
+}
 /* ============================================ */
 /* UTILIDADES */
 /* ============================================ */
