@@ -65,26 +65,28 @@ public class BD {
         return coleccion;
     }
 
-public List<Figurita> abrirSobre(){
-    List<Figurita> figus = new List<Figurita>();
-    Random random = new Random();
-    
-    for (int i = 0; i < 5; i++)
-    {
-        int idRandom = random.Next(1, 50);
-        query = "SELECT * FROM figurita WHERE ID = @ID";
+    public List<Figurita> abrirSobre(){  //hay que refactorizar
+        List<Figurita> figus = new List<Figurita>();
+        Random random = new Random();
         
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        for (int i = 0; i < 5; i++)
         {
-            Figurita figurita = connection.QueryFirstOrDefault<Figurita>(query, new { ID = idRandom });
+            int idRandom = random.Next(1, 101);
+            query = "SELECT * FROM figurita WHERE ID = @ID";
             
-            if (figurita != null)
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                figus.Add(figurita);
+                Figurita figurita = connection.QueryFirstOrDefault<Figurita>(query, new { ID = idRandom });
+                
+                if (figurita != null)
+                {
+                    figus.Add(figurita);
+                }
             }
         }
+        
+        return figus;
     }
+
     
-    return figus;
-}
 }

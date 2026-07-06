@@ -49,6 +49,18 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult Guardar(List<Figurita> recibidas)
+    {
+        if (recibidas != null && recibidas.Count > 0)
+        {
+            BD bd = new BD();
+            bd.ingresarPaquete(recibidas);
+        }
+
+        return RedirectToAction("Sobres");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

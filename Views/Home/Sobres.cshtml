@@ -12,10 +12,27 @@
 </section>
 
 <section id="contenido" class="oculto">
-@foreach (Figurita figu in ViewBag.recibidas){
-<div class="figuritas paquete">
-@* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
-<img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
-</div>
-}
+    @foreach (Figurita figu in ViewBag.recibidas){
+        <div class="figuritas paquete">
+        <p class="ubicacion2">N:@figu.ID</p>
+        @* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
+        <img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
+        </div>
+    }
+    <form asp-action="Guardar" method="post">
+        @{ int index = 0; }
+        @foreach (Figurita figu in ViewBag.recibidas)
+        {
+            <div class="figuritas paquete oculto">
+                <input type="hidden" name="recibidas[@index].ID" value="@figu.ID" />
+                <input type="hidden" name="recibidas[@index].Nombre" value="@figu.Nombre" />
+                <input type="hidden" name="recibidas[@index].Pais" value="@figu.Pais" />
+                <input type="hidden" name="recibidas[@index].NDorsal" value="@figu.NDorsal" />
+                <input type="hidden" name="recibidas[@index].SeleccionID" value="@figu.SeleccionID" />
+            </div>
+            index++;
+        }
+
+        <button type="submit" class="botonGrande">Guardar paquete</button>
+    </form>
 </section>
