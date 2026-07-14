@@ -15,8 +15,7 @@
     @foreach (Figurita figu in ViewBag.recibidas){
         <div class="figuritas paquete">
         <p class="ubicacion2">N:@figu.ID</p>
-        @* <img src="@("/imagenes/jugadores/" + figu.figuritaID + ".svg")"> </img> *@
-        <img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
+        <img src="@("/images/jugadores/" + figu.ID + ".svg")" alt="figurita" />
         </div>
     }
     <form asp-action="Guardar" method="post">

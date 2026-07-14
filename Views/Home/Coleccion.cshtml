@@ -9,9 +9,13 @@
 <div class="figuritas">
     <p class="ubicacion1">@figu.CantidadFiguritasSueltas</p>
     <p class="ubicacion2">N:@figu.FiguritaID</p>
-    @* <img src="@("/imagenes/jugadores/" + figu.FiguritaID + ".svg")"> </img> *@
-    <img src="/images/jugadores/messi.svg" alt="Messi" /> @*TEMPORAL*@
-    <p class="ubicacion3">@figu.Pegado</p>
+    <img src="@("/images/jugadores/" + figu.FiguritaID + ".svg")" alt="figurita" />
+
+    @if(figu.Pegado){
+        <p class="ubicacion3">Pegado</p>
+    }else{
+        <p class="ubicacion3">Suelta</p>
+    }
 
     <div class="pegar">
         <form asp-action="PegarFigurita" method="post">

@@ -10,7 +10,12 @@
     <button class="botonGrande" onclick="avanzarPagina()">Avanzar</button>
 </section>
     
-<section>
-    <div>
-    </div>
-</section>
+@for (int i = 1; i <= 48; i++)
+{
+    <section id=@($"pag{i}")>
+        <div class="pagina">
+            <h2>Página @i</h2>
+            <p>Contenido de la página @i.</p>
+        </div>
+    </section>
+}

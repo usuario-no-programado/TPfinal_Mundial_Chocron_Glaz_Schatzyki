@@ -73,12 +73,21 @@ public class BD {
         
         for (int i = 0; i < 5; i++)
         {
-            int idRandom = random.Next(0, todasFigus.Count + 1);
+            int idRandom = random.Next(0, todasFigus.Count);
             figus.Add(todasFigus[idRandom]);
         }
         
         return figus;
     }
 
-    
+    public List<Seleccion> obtenerSelecciones()
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM seleccion";
+            return connection.Query<Seleccion>(query).ToList();
+
+            
+        }
+    }
 }
