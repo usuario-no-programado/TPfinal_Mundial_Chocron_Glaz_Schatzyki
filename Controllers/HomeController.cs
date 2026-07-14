@@ -22,6 +22,9 @@ public class HomeController : Controller
 
     public IActionResult Album()
     {
+        BD bd = new BD();
+        List<Seleccion> selecciones = bd.obtenerSelecciones();
+        ViewBag.Selecciones = selecciones;
         return View();
     }
 

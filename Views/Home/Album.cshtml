@@ -9,13 +9,18 @@
     <h3 id="numeroPagina">Pagina 1</h3>
     <button class="botonGrande" onclick="avanzarPagina()">Avanzar</button>
 </section>
-    
-@for (int i = 1; i <= 48; i++)
+
+@{
+    int num = 1;
+}
+
+@foreach (Seleccion sele in ViewBag.Selecciones)
 {
-    <section id=@($"pag{i}")>
+    <section id=@($"pag{num}")>
         <div class="pagina">
-            <h2>Página @i</h2>
-            <p>Contenido de la página @i.</p>
+            <h2>Página @num</h2>
+            <p>Contenido de la página @num.</p>
         </div>
     </section>
+    num++;
 }

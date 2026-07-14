@@ -4,5 +4,5 @@ public class Seleccion
 {
     public int ID { get; set; }
     public string Nacion { get; set; }
-    public List<jugadores> Jugadores { get; set; }
+    public List<Figurita> Jugadores { get; set; }
 }

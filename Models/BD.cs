@@ -82,12 +82,17 @@ public class BD {
 
     public List<Seleccion> obtenerSelecciones()
     {
+        List<Seleccion> selecciones = new List<Seleccion>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT * FROM seleccion";
-            return connection.Query<Seleccion>(query).ToList();
-
-            
+            selecciones = connection.Query<Seleccion>(query).ToList(); 
         }
+        foreach (Seleccion sele in selecciones)
+        {
+            string query = "SELECT * FROM figurita WHERE seleccionID = @ID";
+            sele.jugadores = connection.Query<Figurita>(query, new { ID = sele.ID }).ToList();
+        }
+        return selecciones;
     }
 }
