@@ -18,9 +18,25 @@
 {
     <section id=@($"pag{num}")>
         <div class="pagina">
-            <h2>Página @num</h2>
-            <p>Contenido de la página @num.</p>
+            <h2>@sele.pais</h2>
+            <p>Grupo: @sele.grupo</p>
         </div>
+        <section>
+            @foreach(Figurita figu in sele.Jugadores){
+                if(figu.Pegada){
+                    <div class="figuritas">
+                        <p class="ubicacion2">N:@figu.ID</p>
+                        <img src="@("/images/jugadores/" + figu.ID + ".svg")" alt="figurita" />
+                    </div>
+                }else{
+                    <div class="figuritas">
+                        <p class="ubicacion2">N:@figu.ID</p>
+                        <img src="@("/images/jugadores/null.svg")" alt="figurita" />
+                    </div>
+                }
+                
+            }
+        </section>
     </section>
     num++;
 }

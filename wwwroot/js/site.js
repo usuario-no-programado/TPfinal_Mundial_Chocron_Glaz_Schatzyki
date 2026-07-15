@@ -1,6 +1,8 @@
 ﻿function mostrarContenido() {
   const contenido = document.getElementById("contenido");
+  const sobre = document.getElementById("sobre")
   contenido.classList.remove("oculto");
+  sobre.classList.add("oculto");
 }
 
 function retrocederPagina() {

@@ -48,11 +48,13 @@ public class BD {
 
     public List<Figurita> obtenerTodasLasFiguritas()
     {
+        List<Figurita> todasFigus = new List<Figurita>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT * FROM figurita";
-            return connection.Query<Figurita>(query).ToList();
+            todasFigus = connection.Query<Figurita>(query).ToList();
         }
+        return todasFigus;
     }
 
     public List<Coleccion> GetColeccion(){
@@ -87,11 +89,18 @@ public class BD {
         {
             string query = "SELECT * FROM seleccion";
             selecciones = connection.Query<Seleccion>(query).ToList(); 
-        }
-        foreach (Seleccion sele in selecciones)
-        {
-            string query = "SELECT * FROM figurita WHERE seleccionID = @ID";
-            sele.jugadores = connection.Query<Figurita>(query, new { ID = sele.ID }).ToList();
+            foreach (Seleccion sele in selecciones)
+            {
+                query = "SELECT * FROM figurita WHERE seleccionID = @ID";
+                sele.Jugadores = connection.Query<Figurita>(query, new { ID = sele.ID }).ToList();
+
+                foreach (Figurita figu in sele.Jugadores)
+                {
+                query = "SELECT pegado FROM [usuario-figurita] WHERE figuritaID = @ID AND usuarioID = 1";
+                int pegado = connection.QueryFirstOrDefault<int>(query, new { ID = figu.ID });
+                figu.Pegada = (pegado == 1);
+                }
+            }
         }
         return selecciones;
     }

@@ -7,4 +7,5 @@ public class Figurita
     public string Pais { get; set; }
     public int NDorsal { get; set; }
     public int SeleccionID { get; set; }
+    public bool Pegada { get; set; }
 }
