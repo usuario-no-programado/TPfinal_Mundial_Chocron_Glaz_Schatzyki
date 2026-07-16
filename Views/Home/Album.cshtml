@@ -16,12 +16,11 @@
 
 @foreach (Seleccion sele in ViewBag.Selecciones)
 {
-    <section id=@($"pag{num}")>
+    <section id=@($"pag{num}") class="@sele.pais" data-pais="@sele.pais">
         <div class="pagina">
             <h2>@sele.pais</h2>
             <p>Grupo: @sele.grupo</p>
         </div>
-        <section>
             @foreach(Figurita figu in sele.Jugadores){
                 if(figu.Pegada){
                     <div class="figuritas">
@@ -36,7 +35,6 @@
                 }
                 
             }
-        </section>
     </section>
     num++;
 }

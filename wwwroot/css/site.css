@@ -1,34 +1,76 @@
-/* ============================================ */
+ 
 /* RESET GLOBAL */
-/* ============================================ */
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* ============================================ */
+ 
 /* LAYOUT GENERAL */
-/* ============================================ */
+ 
 .todo {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1%;
 }
 
-/* ============================================ */
+header{
+  background-color: #00008b;
+  width: 20%;
+  border-radius: 30px;
+  padding: 1%;
+  margin: 1%;
+  position:absolute;
+  top: 0;
+  z-index: 1000;
+}
+header img{
+  width: 30%;
+  height: auto;
+  display: block;
+  border-radius: 30px;
+}
+header button{
+  
+  font-size: 400%;
+  width: fit-content;
+}
+
+footer{
+  background-color: #00008b;
+  width: 50%;
+  border-radius: 30px;
+  padding: 1%;
+  margin: 1%;
+  color: #ffffff;
+  text-align: center;
+}
+ 
 /* TIPOGRAFÍA */
-/* ============================================ */
+ 
 h1 {
   text-align: center;
-  margin-bottom: 4%;
-  font-size: 2.5rem;
-  font-weight: bold;
+  margin: 0 auto 5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: "Segoe UI Black", "Arial Black", "Impact", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #061c54 0%, #0a2f7f 45%, #ffe34c 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 227, 60, 0.9);
+  box-shadow: 0 20px 50px rgba(0, 11, 60, 0.4), inset 0 0 18px rgba(255, 231, 66, 0.4);
+  text-shadow: 0 0 16px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.35);
+  max-width: 960px
 }
 
-/* ============================================ */
+ 
 /* SECCIONES */
-/* ============================================ */
+ 
 section {
   display: flex;
   justify-content: space-around;
@@ -53,9 +95,40 @@ section div img{
   width: 100%;
 }
 
-/* ============================================ */
+section[class] {
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.18);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.25), 0 0 40px rgba(255,255,255,0.08);
+}
+
+section[class] .pagina {
+  width: 100%;
+  text-align: center;
+}
+
+section[class] h2 {
+  font-size: 3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255,255,255,0.85), 0 0 28px rgba(255,255,255,0.25);
+  margin-bottom: 0.5rem;
+}
+
+section[class] p {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+
+section[class] h2, section[class] p {
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 18px;
+}
+
+ 
 /* FIGURITAS */
-/* ============================================ */
+ 
 .figuritas {
   width: 10%;
   float: left;
@@ -100,17 +173,17 @@ section div img{
   bottom: 20%;
 }
 
-/* ============================================ */
+ 
 /* FIGURITAS EN PAQUETES */
-/* ============================================ */
+ 
 .paquete {
   width: 15%;
 }
 
 
-/* ============================================ */
+ 
 /* BOTONES */
-/* ============================================ */
+
 button {
   width: 100%;
   box-shadow: inset 0px 0px 15px 3px #23395e;
@@ -146,9 +219,9 @@ button:active {
   padding: 12px 26px;
 }
 
-/* ============================================ */
+
 /* CONTENEDOR PEGAR FIGURITA */
-/* ============================================ */
+
 .pegar {
   width: 100%;
   float: none;
@@ -160,9 +233,9 @@ button:active {
   justify-content: center;
 }
 
-/* ============================================ */
+
 /* Album */
-/* ============================================ */
+
 .páginas{
   display: flex;
   justify-content: center;
@@ -180,9 +253,96 @@ button:active {
   font-weight: bold;
   width: 100%;
 }
-/* ============================================ */
+
+/* FONDOS POR PAÍS */
+[data-pais="México"] { background: linear-gradient(135deg,#00391f 0%,#008c45 35%,#f1bf00 70%,#cf142b 100%); }
+[data-pais="Sudáfrica"] { background: linear-gradient(135deg,#007a3d 0%,#ffb81c 50%,#de3831 100%); }
+[data-pais="Corea del Sur"] { background: linear-gradient(135deg,#f5f5f5 0%,#db1f26 50%,#003478 100%); }
+[data-pais="República Checa"] { background: linear-gradient(135deg,#11457e 0%,#ffffff 50%,#d7141a 100%); }
+[data-pais="Suiza"] { background: linear-gradient(135deg,#ff0000 0%,#ffffff 50%,#ff0000 100%); }
+[data-pais="Canadá"] { background: linear-gradient(135deg,#b31b1b 0%,#ff0000 40%,#ffffff 80%,#b31b1b 100%); }
+[data-pais="Bosnia y Herzegovina"] { background: linear-gradient(135deg,#002d72 0%,#f7d117 50%,#ffffff 100%); }
+[data-pais="Catar"] { background: linear-gradient(135deg,#8a1538 0%,#ffffff 100%); }
+[data-pais="Brasil"] { background: linear-gradient(135deg,#009c3b 0%,#ffdf00 100%); }
+[data-pais="Marruecos"] { background: linear-gradient(135deg,#ce1126 0%,#006233 100%); }
+[data-pais="Escocia"] { background: linear-gradient(135deg,#0065bd 0%,#ffffff 100%); }
+[data-pais="Haití"] { background: linear-gradient(135deg,#00209f 0%,#d21034 100%); }
+[data-pais="Estados Unidos"] { background: linear-gradient(135deg,#b22234 0%,#3c3b6e 40%,#ffffff 100%); }
+[data-pais="Australia"] { background: linear-gradient(135deg,#012169 0%,#00843d 45%,#ffcd00 100%); }
+[data-pais="Paraguay"] { background: linear-gradient(135deg,#0038a8 0%,#ffffff 50%,#d52b1e 100%); }
+[data-pais="Turquía"] { background: linear-gradient(135deg,#e30a17 0%,#ffffff 50%,#e30a17 100%); }
+[data-pais="Alemania"] { background: linear-gradient(135deg,#000000 0%,#dd0000 35%,#ffce00 100%); }
+[data-pais="Costa de Marfil"] { background: linear-gradient(135deg,#009e60 0%,#ffffff 50%,#f77f00 100%); }
+[data-pais="Ecuador"] { background: linear-gradient(135deg,#ffd700 0%,#0038a8 45%,#d21034 100%); }
+[data-pais="Curazao"] { background: linear-gradient(135deg,#004b87 0%,#f7d618 100%); }
+[data-pais="Países Bajos"] { background: linear-gradient(135deg,#21468b 0%,#ffffff 45%,#ae1c28 100%); }
+[data-pais="Japón"] { background: linear-gradient(135deg,#ffffff 0%,#bc002d 100%); }
+[data-pais="Suecia"] { background: linear-gradient(135deg,#006aa7 0%,#fecc00 100%); }
+[data-pais="Túnez"] { background: linear-gradient(135deg,#e30a17 0%,#ffffff 100%); }
+[data-pais="Bélgica"] { background: linear-gradient(135deg,#000000 0%,#ff0000 35%,#ffde00 100%); }
+[data-pais="Egipto"] { background: linear-gradient(135deg,#ce1126 0%,#ffffff 50%,#000000 100%); }
+[data-pais="Irán"] { background: linear-gradient(135deg,#239f40 0%,#ffffff 50%,#da121a 100%); }
+[data-pais="Nueva Zelanda"] { background: linear-gradient(135deg,#000000 0%,#ffffff 50%,#000000 100%); }
+[data-pais="España"] { background: linear-gradient(135deg,#aa151b 0%,#f1bf00 100%); }
+[data-pais="Cabo Verde"] { background: linear-gradient(135deg,#227fbb 0%,#f7d417 50%,#000000 100%); }
+[data-pais="Uruguay"] { background: linear-gradient(135deg,#75aadb 0%,#ffffff 50%,#000000 100%); }
+[data-pais="Arabia Saudita"] { background: linear-gradient(135deg,#007a3d 0%,#ffffff 100%); }
+[data-pais="Francia"] { background: linear-gradient(135deg,#0055a4 0%,#ffffff 40%,#ef4135 100%); }
+[data-pais="Noruega"] { background: linear-gradient(135deg,#ef2b2d 0%,#ffffff 35%,#002868 100%); }
+[data-pais="Senegal"] { background: linear-gradient(135deg,#00853f 0%,#fdef42 50%,#e8272e 100%); }
+[data-pais="Irak"] { background: linear-gradient(135deg,#000000 0%,#ffffff 40%,#ce1126 100%); }
+[data-pais="Argentina"] { background: radial-gradient(circle,rgba(255, 215, 0, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(116, 172, 223, 1) 100%); }
+[data-pais="Austria"] { background: linear-gradient(135deg,#ed2939 0%,#ffffff 100%); }
+[data-pais="Argelia"] { background: linear-gradient(135deg,#006233 0%,#ffffff 50%,#ffd700 100%); }
+[data-pais="Jordania"] { background: linear-gradient(135deg,#000000 0%,#ffffff 40%,#006233 100%); }
+[data-pais="Colombia"] { background: linear-gradient(135deg,#ffd100 0%,#0033a0 50%,#ce1126 100%); }
+[data-pais="Portugal"] { background: linear-gradient(135deg,#006600 0%,#ffffff 45%,#c8102e 100%); }
+[data-pais="República Democrática del Congo"] { background: linear-gradient(135deg,#007a3d 0%,#ffd700 40%,#002868 100%); }
+[data-pais="Uzbekistán"] { background: linear-gradient(135deg,#1eb53a 0%,#ffffff 80%); }
+[data-pais="Inglaterra"] { background: linear-gradient(135deg,#cf142b 0%,#ffffff 100%); }
+[data-pais="Croacia"] { background: linear-gradient(135deg,#ff0000 0%,#ffffff 40%,#00008b 100%); }
+[data-pais="Ghana"] { background: linear-gradient(135deg,#ff0000 0%,#ffd700 45%,#009e60 100%); }
+[data-pais="Panamá"] { background: linear-gradient(135deg,#ffffff 0%,#cf142b 45%,#002868 100%); }
+
 /* UTILIDADES */
-/* ============================================ */
+
+section[id^="pag"] {
+  display: none;
+  opacity: 0;
+}
+
+section[id^="pag"].visible {
+  display: flex;
+  animation: fadeInPage 0.4s ease-out forwards;
+}
+
+section[id^="pag"].fade-out {
+  display: flex;
+  animation: fadeOutPage 0.35s ease-in forwards;
+}
+
+@keyframes fadeInPage {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeOutPage {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.98);
+  }
+}
+
 .oculto {
   display: none;
 }
