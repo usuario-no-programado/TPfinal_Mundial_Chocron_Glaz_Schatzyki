@@ -5,25 +5,43 @@
 <h1> Tu coleccion </h1>
 
 <section>
-@foreach (Coleccion figu in ViewBag.Coleccion){
-<div class="figuritas">
-    <p class="ubicacion1">@figu.CantidadFiguritasSueltas</p>
-    <p class="ubicacion2">N:@figu.FiguritaID</p>
-    <img src="@("/images/jugadores/" + figu.FiguritaID + ".svg")" alt="figurita" />
-
-    @if(figu.Pegado){
-        <p class="ubicacion3">Pegado</p>
-    }else{
-        <p class="ubicacion3">Suelta</p>
-    }
-
-    <div class="pegar">
-        <form asp-action="PegarFigurita" method="post">
-            <input type="hidden" name="figuritaID" value="@figu.FiguritaID" />
-            <button type="submit">Pegar figurita</button>
-        </form>
-    </div>
-
-</div>
-}
+    <form asp-action="PegarTodo" method="post">
+        <button class="botonGrande" type="submit">Pegar Todas</button>
+    </form>
+    <form asp-action="TirarRepes" method="post">
+        <button class="botonGrande" type="submit">Tirar repetidas ya pegadas</button>
+    </form>
 </section>
+
+@if(ViewBag.Coleccion.Count == 0){
+    <section>
+        <h2>No tienes figuritas abre paquetes para obtenerlas</h2>
+        <form asp-action="Sobres" method="post">
+            <button class="botonGrande" type="submit">Abrir Paquete</button>
+        </form>
+    </section>
+}else{
+    <section>
+        @foreach (Coleccion figu in ViewBag.Coleccion){
+            <div class="figuritas">
+                <p class="ubicacion1">@figu.CantidadFiguritasSueltas</p>
+                <p class="ubicacion2">N:@figu.FiguritaID</p>
+                <img src="@("/images/jugadores/" + figu.FiguritaID + ".svg")" alt="figurita" />
+
+                @if(figu.Pegado){
+                    <p class="ubicacion3">Pegado</p>
+                }else{
+                    <p class="ubicacion3">Suelta</p>
+                }
+
+                <div class="pegar">
+                    <form asp-action="PegarFigurita" method="post">
+                        <input type="hidden" name="figuritaID" value="@figu.FiguritaID" />
+                        <button type="submit">Pegar figurita</button>
+                    </form>
+                </div>
+
+            </div>
+        }
+</section>
+}

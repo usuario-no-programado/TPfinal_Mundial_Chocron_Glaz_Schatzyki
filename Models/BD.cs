@@ -104,4 +104,29 @@ public class BD {
         }
         return selecciones;
     }
+
+    public void tirarRepes()
+    {
+        List<Coleccion> repes = GetColeccion();
+        foreach (Coleccion rep in repes)
+            {
+                if (rep.Pegado && rep.CantidadFiguritasSueltas > 0)
+                {
+                    using (SqlConnection connection = new SqlConnection(_connectionString))
+                    {  
+                        query = "UPDATE [usuario-figurita] SET cantidadFiguritasSueltas = 0 WHERE figuritaID = @ID AND usuarioID = 1";
+                        connection.Execute(query, new { ID = rep.FiguritaID });   
+                    }
+                }
+            }
+    }
+
+    public void pegarTodo()
+    {
+        List<Coleccion> coleccion = GetColeccion();
+        foreach (Coleccion item in coleccion)
+        {
+            pegarFigurita(item.FiguritaID);
+        }
+    }
 }

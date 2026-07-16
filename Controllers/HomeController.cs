@@ -52,6 +52,20 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult PegarTodo()
+    {
+        BD bd = new BD();
+        bd.pegarTodo();
+        return RedirectToAction("Coleccion");
+    }
+
+    public IActionResult TirarRepes()
+    {
+        BD bd = new BD();
+        bd.tirarRepes();
+        return RedirectToAction("Coleccion");
+    }
+
     [HttpPost]
     public IActionResult Guardar(List<Figurita> recibidas)
     {

@@ -1,8 +1,39 @@
 ﻿function mostrarContenido() {
   const contenido = document.getElementById("contenido");
   const sobre = document.getElementById("sobre");
-  contenido.classList.remove("oculto");
-  sobre.classList.add("oculto");
+  const imagenPaquete = sobre.querySelector("img");
+  const boton = sobre.querySelector("button");
+  
+  // Desactivar el botón para evitar clics múltiples
+  boton.disabled = true;
+  
+  // Agregar animación de aplastamiento a la imagen
+  imagenPaquete.classList.add("aplastando");
+  
+  // Esperar a que termine la animación del paquete (0.8s)
+  setTimeout(() => {
+    // Ocultar el sobre y mostrar contenido
+    contenido.classList.remove("oculto");
+    sobre.classList.add("oculto");
+    
+    // Obtener todas las figuritas (solo las que se ven, no los inputs ocultos)
+    const figuritas = contenido.querySelectorAll(".figuritas.paquete:not(:has(input))");
+    
+    // Animar cada figurita con un delay
+    figuritas.forEach((figurita, index) => {
+      // Generar un ángulo random entre -8 y 8 grados
+      const anguloRandom = (Math.random() * 4) - 2;
+      figurita.style.setProperty('--rotation', `${anguloRandom}deg`);
+      
+      // Reset animation
+      figurita.classList.remove("animar");
+      // Trigger reflow to restart animation
+      void figurita.offsetWidth;
+      // Agregar clase de animación con delay
+      figurita.style.animationDelay = (index * 0.1) + "s";
+      figurita.classList.add("animar");
+    });
+  }, 800);
 }
 
 function getNumeroPagina() {
