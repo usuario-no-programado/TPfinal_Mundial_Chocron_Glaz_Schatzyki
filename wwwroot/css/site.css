@@ -9,6 +9,12 @@
  
 /* LAYOUT GENERAL */
  
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .todo {
   width: 90%;
   margin-left: auto;
@@ -33,9 +39,13 @@ header img{
   border-radius: 30px;
 }
 header button{
-  
   font-size: 400%;
   width: fit-content;
+}
+header div{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 footer{
@@ -49,23 +59,24 @@ footer{
 }
  
 /* TIPOGRAFÍA */
- 
 h1 {
+  font-family: "Segoe UI Black", "Arial Black", "Impact", sans-serif;
   text-align: center;
-  margin: 0 auto 5rem;
+
+  padding: 3% 2%;
+  width: 60%;
+
   font-size: 3rem;
   font-weight: 900;
-  font-family: "Segoe UI Black", "Arial Black", "Impact", sans-serif;
+  
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  
   color: #ffffff;
   background: linear-gradient(135deg, #061c54 0%, #0a2f7f 45%, #ffe34c 100%);
-  padding: 1rem 1.5rem;
   border-radius: 30px;
   border: 2px solid rgba(255, 227, 60, 0.9);
   box-shadow: 0 20px 50px rgba(0, 11, 60, 0.4), inset 0 0 18px rgba(255, 231, 66, 0.4);
   text-shadow: 0 0 16px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.35);
-  max-width: 960px
 }
 
  

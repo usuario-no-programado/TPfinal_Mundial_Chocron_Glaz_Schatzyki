@@ -75,7 +75,7 @@ public class BD {
         
         for (int i = 0; i < 5; i++)
         {
-            int idRandom = random.Next(0, todasFigus.Count);
+            int idRandom = random.Next(0, 865); // Genera un número aleatorio entre 0 y 864, cambiar en caso de agregar jugadores
             figus.Add(todasFigus[idRandom]);
         }
         

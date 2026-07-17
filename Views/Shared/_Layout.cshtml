@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TPfinal_Mundial_Chocron_Glaz_Schatzyki</title>
+    <title>@ViewData["Title"] - Album mundial 2026</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -11,11 +11,11 @@
 </head>
 <body>
     <header>
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <div>
         <img src="~/images/logo.png" alt="logo" class="logo" />
-            <div class="navbar-nav flex-grow-1">
-                <button type="button" class="nav-button" onclick="window.location.href='@Url.Action("Index", "Home")'">Home</button>
-            </div>
+            <form asp-action="Index" method="post">
+                <button type="submit">Home</button>
+            </form>
         </div>
     </header>
     <div class="todo">
