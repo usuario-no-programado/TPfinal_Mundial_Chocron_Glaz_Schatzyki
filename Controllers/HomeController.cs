@@ -25,6 +25,30 @@ public class HomeController : Controller
         BD bd = new BD();
         List<Seleccion> selecciones = bd.obtenerSelecciones();
         ViewBag.Selecciones = selecciones;
+
+        int totalFiguritas = 864;
+        int owned = 0;
+
+        foreach (Seleccion sele in selecciones)
+        {
+            if (sele.Jugadores != null)
+            {
+                foreach (Figurita figu in sele.Jugadores)
+                {
+                    if (figu.Pegada)
+                    {
+                        owned++;
+                    }
+                }
+            }
+        }
+
+        int porcentaje = totalFiguritas == 0 ? 0 : (int)Math.Round((owned * 100.0) / totalFiguritas);
+
+        ViewBag.TotalFiguritas = totalFiguritas;
+        ViewBag.Owned = owned;
+        ViewBag.Porcentaje = porcentaje;
+
         return View();
     }
 

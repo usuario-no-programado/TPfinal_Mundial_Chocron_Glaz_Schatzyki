@@ -4,29 +4,10 @@
 
 <h1>Album</h1>
 
-@{
-    int totalFiguritas = 864;
-    int owned = 0;
-    if (ViewBag.Selecciones != null)
-    {
-        foreach (Seleccion s in ViewBag.Selecciones)
-        {
-            if (s.Jugadores != null)
-            {
-                foreach (Figurita f in s.Jugadores)
-                {
-                    if (f.Pegada) { owned++; }
-                }
-            }
-        }
-    }
-    var porcentaje = (int)Math.Round((owned * 100.0) / totalFiguritas);
-}
-
 <div class="progress-wrapper fondo">
-    <div class="progress-label">Progreso: @owned / @totalFiguritas (@porcentaje%)</div>
+    <div class="progress-label">Progreso: @ViewBag.Owned / @ViewBag.TotalFiguritas (@ViewBag.Porcentaje%)</div>
     <div class="progress">
-        <div class="progress-bar" style="width:@porcentaje%"></div>
+        <div class="progress-bar" style="width:@ViewBag.Porcentaje%"></div>
     </div>
 </div>
 <section class="páginas">
